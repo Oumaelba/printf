@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,3 +12,6 @@
       and print text and other data types to the standard output stream.
     </p>
 	
+=======
+salam
+>>>>>>> refs/remotes/origin/main
