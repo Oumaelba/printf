@@ -36,15 +36,18 @@
 	<h2>Usage</h2>
 	<p>
       To use the <code>printf</code> function, include the <code>printf.h</code> header in your source file and call the function with a format string and any additional arguments as needed:
+	<pre>  
 	  <code>
 	  #include "printf.h"
+
         int main(void) {
             int x = 42;
             char* s = "hello";
             printf("%d %s\n", x, s);
             return 0;
         }
-		</code>
+</code>
+	</pre>
 	  This will print 42 hello to the standard output stream.
 	</p>
 	<h2>Testing</h2>
