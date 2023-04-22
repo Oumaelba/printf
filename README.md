@@ -36,7 +36,7 @@
 	<p>
       To use the <code>_printf</code> function, include the <code>printf.h</code> header in your source file and call the function with a format string and any additional arguments as needed:
   </p>
-	<!-- <pre>  
+	<!-- <pre>
 	  <code> -->
 
         #include "printf.h"
