@@ -39,8 +39,8 @@
 	<!-- <pre>  
 	  <code> -->
 	 ```c
-    #include "printf.h"
 
+        #include "printf.h"
         int main(void) {
             int x = 42;
             char* s = "hello";
