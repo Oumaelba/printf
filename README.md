@@ -47,11 +47,10 @@
             printf("%d %s\n", x, s);
             return 0;
         }
-    ```
 
 <!-- </code>
 	</pre> -->
-
+  <p>
       This will print 42 hello to the standard output stream.
     </p>
     <h2>Testing</h2>
