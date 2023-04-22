@@ -35,6 +35,7 @@
 	<h2>Usage</h2>
 	<p>
       To use the <code>printf</code> function, include the <code>printf.h</code> header in your source file and call the function with a format string and any additional arguments as needed:
+  </p>
 	<!-- <pre>  
 	  <code> -->
 	 ```c
