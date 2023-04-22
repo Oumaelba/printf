@@ -16,6 +16,8 @@ int	t_print(const char *str, int i, va_list arg, int len, int tmpi)
 		len += _putchar(va_arg(arg, int));
 	else if (str[i + 1] == 's')
 		len += _putstring(va_arg(arg, char *));
+	else if (str[i + 1] == 'd' || str[i + 1] == 'i')
+		len += print_number(va_arg(arg, int));
 	else if (str[i + 1] == '%')
 		len += _putchar('%');
 	else if (str[i + 1])
