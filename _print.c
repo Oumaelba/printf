@@ -42,12 +42,18 @@ int _printf(const char *format, ...)
 		{
 			if (format[i] == '%')
 			{
+				while (format[i + 1] == ' ')
+				{
+					i++;
+					if (format[i] != ' ')
+					break;
+				}
 				len = t_print(format, i, arg, len);
 				i++;
 			}
-			else if (format[i])
+				else if (format[i])
 				len += _putchar(format[i]);
-			i++;
+				i++;
 		}
 	}
 	va_end(arg);
