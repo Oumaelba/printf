@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
 	i = 0;
 	tmpi = 0;
 	len = 0;
-	if (!format)
+	if (format == NULL)
 		return (-1);
 	if (format != NULL)
 	{
