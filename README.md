@@ -34,7 +34,7 @@
 	</p>
 	<h2>Usage</h2>
 	<p>
-      To use the <code>printf</code> function, include the <code>printf.h</code> header in your source file and call the function with a format string and any additional arguments as needed:
+      To use the <code>_printf</code> function, include the <code>printf.h</code> header in your source file and call the function with a format string and any additional arguments as needed:
   </p>
 	<!-- <pre>  
 	  <code> -->
@@ -43,7 +43,7 @@
         int main(void) {
             int x = 42;
             char* s = "hello";
-            printf("%d %s\n", x, s);
+            _printf("%d %s\n", x, s);
             return 0;
         }
 
