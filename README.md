@@ -46,6 +46,7 @@
             printf("%d %s\n", x, s);
             return 0;
         }
+    ```
 
 <!-- </code>
 	</pre> -->
@@ -58,4 +59,5 @@
       <code>gcc -Wall -Werror -Wextra -pedantic test_printf.c printf.c -o test_printf
 
 ./test_printf</code>
+
 </p>
