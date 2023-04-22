@@ -6,10 +6,11 @@
  * @i: current position in the format string
  * @arg: variable argument list
  * @len: current length of the output
+ * @tmpi: holds th value of i
  * Return: the updated length of the output
  */
 
-int	t_print(const char *str, int i, va_list arg, int len)
+int	t_print(const char *str, int i, va_list arg, int len, int tmpi)
 {
 	if (str[i + 1] == 'c')
 		len += _putchar(va_arg(arg, int));
@@ -19,6 +20,8 @@ int	t_print(const char *str, int i, va_list arg, int len)
 		len += _putchar('%');
 	else if (str[i + 1])
 	{
+		len += _putchar(str[tmpi]);
+		_putchar(str[tmpi + 1]);
 		len++;
 		i++;
 	}
@@ -55,11 +58,10 @@ int _printf(const char *format, ...)
 					i++;
 					if (format[i + 1] != ' ')
 					{
-						len += _putchar(format[tmpi]);
 						break;
 					}
 				}
-				len = t_print(format, i, arg, len);
+				len = t_print(format, i, arg, len, tmpi);
 				i++;
 			}
 			else if (format[i])
