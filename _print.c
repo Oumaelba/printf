@@ -17,6 +17,11 @@ int	t_print(const char *str, int i, va_list arg, int len)
 		len += _putstring(va_arg(arg, char *));
 	else if (str[i + 1] == '%')
 		len += _putchar('%');
+	else if (str[i + 1])
+	{
+		len++;
+		i++;
+	}
 	return (len);
 }
 /**
@@ -30,9 +35,11 @@ int _printf(const char *format, ...)
 	unsigned int i;
 	unsigned int len;
 	va_list arg;
+	int tmpi;
 
 	va_start(arg, format);
 	i = 0;
+	tmpi = 0;
 	len = 0;
 	if (!format)
 		return (-1);
@@ -42,18 +49,22 @@ int _printf(const char *format, ...)
 		{
 			if (format[i] == '%')
 			{
+				tmpi = i;
 				while (format[i + 1] == ' ')
 				{
 					i++;
-					if (format[i] != ' ')
-					break;
+					if (format[i + 1] != ' ')
+					{
+						len += _putchar(format[tmpi]);
+						break;
+					}
 				}
 				len = t_print(format, i, arg, len);
 				i++;
 			}
-				else if (format[i])
+			else if (format[i])
 				len += _putchar(format[i]);
-				i++;
+			i++;
 		}
 	}
 	va_end(arg);
