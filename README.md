@@ -38,7 +38,6 @@
   </p>
 	<!-- <pre>  
 	  <code> -->
-	 ```c
 
         #include "printf.h"
         int main(void) {
