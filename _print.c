@@ -13,15 +13,11 @@
 int	t_print(const char *str, int i, va_list arg, int len, int tmpi)
 {
 	char *s;
+
 	if (str[i + 1] == 'c')
 		len += _putchar(va_arg(arg, int));
 	else if (str[i + 1] == 's')
-	{
-		s = va_arg(arg, char *);
-		if (!s)
-			s = "(null)";
-		len += _putstring(s);
-	}
+		len += _putstring(va_arg(arg, char *));
 	else if (str[i + 1] == '%')
 		len += _putchar('%');
 	else if (str[i + 1])
