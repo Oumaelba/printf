@@ -20,6 +20,8 @@ int	t_print(const char *str, int i, va_list arg, int len, int tmpi)
 		len += print_number(va_arg(arg, int));
 	else if (str[i + 1] == '%')
 		len += _putchar('%');
+	else if (str[i + 1] == 'b')
+		len += convert_binary(va_arg(arg, int));
 	else if (str[i + 1])
 	{
 		len += _putchar(str[tmpi]);
