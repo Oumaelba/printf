@@ -1,17 +1,16 @@
 #include "main.h"
-/**
- * print_rev - prints an array of integers in reverse order
- * @store: pointer to the array of integers
- *
- * Return: void
- */
 
-void print_rev(int *store)
+/**
+ * print_rev - Prints an array of integers in reverse order.
+ * @store: Pointer to the array of integers to be printed.
+ * @size: The size of the array.
+ */
+void print_rev(int *store, int size)
 {
 	int i;
 
 	i = 0;
-	while (store[i] != '\0')
+	while (i < size)
 		i++;
 	i--;
 	while (i >= 0)
@@ -20,11 +19,12 @@ void print_rev(int *store)
 		i--;
 	}
 }
+
 /**
- * convert_binary - converts an integer to binary
- * @num: the integer to convert
+ * convert_binary - Converts a decimal number to binary and prints it.
+ * @num: The decimal number to be converted.
  *
- * Return: the number of binary digits
+ * Return: The number of digits in the binary representation.
  */
 int convert_binary(int num)
 {
@@ -39,7 +39,7 @@ int convert_binary(int num)
 		num /= 2;
 		i++;
 	}
-	print_rev(store);
+	print_rev(store, i);
 	free(store);
 	return (i);
 }
