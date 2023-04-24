@@ -63,9 +63,7 @@ int _printf(const char *format, ...)
 				{
 					i++;
 					if (format[i + 1] != ' ')
-					{
 						break;
-					}
 				}
 				len = t_print(format, i, arg, len, tmpi);
 				i++;

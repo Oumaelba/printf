@@ -1,6 +1,22 @@
 #include "main.h"
 
 /**
+ * print_adyali - Prints a binary number.
+ * @data: A struct containing the binary number as an array of integers
+ */
+void  print_adyali(var_cov data)
+{
+	int i;
+
+	i = 0;
+	while (i < data.i)
+	{
+		_printf("%d", data.str[i]);
+		i++;
+	}
+}
+
+/**
  * print_number - print a number
  * @n:the number .
  * Return: the value o i
