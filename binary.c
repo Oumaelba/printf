@@ -32,7 +32,7 @@ var_cov _rev(var_cov data)
  *
  * Return: The struct containing the binary number.
  */
-var_cov converter(var_cov value, int num)
+var_cov converter(var_cov value, long long num)
 {
 	while (num > 0)
 	{
@@ -91,7 +91,7 @@ var_cov mirroring(var_cov value)
  *
  * Return: The length of the binary number.
  */
-int convert_binary(int num)
+int convert_binary(long long num)
 {
 	var_cov hold;
 
