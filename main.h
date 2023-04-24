@@ -27,9 +27,9 @@ int	t_print(const char *str, int i, va_list arg, int len, int tmpi);
 int _printf(const char *format, ...);
 void print_adyali(var_cov data);
 var_cov _rev(var_cov data);
-var_cov converter(var_cov value, long long num);
+var_cov converter(var_cov value, long num);
 var_cov addition(var_cov store);
 var_cov  mirroring(var_cov value);
-int convert_binary(long long num);
+int convert_binary(long num);
 
 #endif
