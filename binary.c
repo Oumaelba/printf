@@ -99,7 +99,7 @@ int convert_binary(int num)
 	hold.str = malloc(sizeof(int) * 32);
 	if (num == 0)
 	{
-		putchar('0');
+		hold.i = _putchar('0');
 		return (hold.i);
 	}
 	if (num > 0)
