@@ -1,28 +1,39 @@
 #include "main.h"
 
 /**
- * Reverses the order of digits in a binary number.
+ * _rev - Reverses the order of digits in a binary number.
+ * @data: A struct containing the binary number as an array
+ * Return: The struct containing the reversed binary number.
  */
 var_cov reverse_binary(var_cov data)
 {
-    int i = 0;
-    int j = data.i - 1;
+	int i;
+	int j;
+	int tmp;
 
-    while (j > i)
-    {
-        data.str[i] ^= data.str[j];
-        data.str[j] ^= data.str[i];
-        data.str[i] ^= data.str[j];
-        j--;
-        i++;
-    }
-
-    return data;
+	i = 0;
+	while (i < data.i)
+		i++;
+	i--;
+	while (j < i)
+	{
+		tmp = data.str[i];
+		data.str[i] = data.str[j];
+		data.str[j] = tmp;
+		j++;
+		i--;
+	}
+	return (data);
 }
 
 /**
  * Converts a decimal number to binary.
+ *
+ * @param value A struct that contains an integer array to store the binary digits and an integer to keep track of the number of digits.
+ * @param num The decimal number to convert to binary.
+ * @return The binary representation of the input decimal number.
  */
+
 var_cov convert_to_binary(var_cov value, long int num)
 {
 	int i;
@@ -74,6 +85,9 @@ var_cov convert_to_binary(var_cov value, long int num)
 
 /**
  * Adds one to a binary number.
+ *
+ * @param store The binary number to which one should be added.
+ * @return The result of adding one to the input binary number.
  */
 var_cov addition(var_cov store)
 {
@@ -113,6 +127,11 @@ var_cov addition(var_cov store)
     return store;
 }
 
+/**
+ * print_adyali - Prints a binary number.
+ * @data: A struct containing the binary number as an array of integers
+ */
+
 void  print_adyali(var_cov data)
 {
 	int i;
@@ -124,9 +143,14 @@ void  print_adyali(var_cov data)
 		i++;
 	}
 }
+
 /**
  * Converts a decimal number to binary and returns the length of the binary representation.
+ *
+ * @param num The decimal number to convert to binary.
+ * @return The length of the binary representation.
  */
+
 int convert_to_binary_return_length(long int num)
 {
     var_cov value;

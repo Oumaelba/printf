@@ -14,8 +14,9 @@
  * @i: Integer value indicating the number of binary digits in the array
  */
 
-typedef struct {
-		int* str;
+typedef struct var_cov
+{
+		int *str;
 		int i;
 } var_cov;
 
