@@ -35,10 +35,10 @@ int	t_print(const char *str, int i, va_list arg, int len, int tmpi)
 		void *p = va_arg(arg, void *);
 
 		if (!p)
-			len += _printf("%s", "(nil)");
+			len += _putstring("(nil)");
 		else
 		{
-			len += _printf("%s", "0x");
+			len += _putstring("0x");
 			len += lower_hex((unsigned long)p);
 		}
 	}
