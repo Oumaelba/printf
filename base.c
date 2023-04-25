@@ -15,21 +15,24 @@ int un_string(unsigned int num)
 
 	i = 0;
 	str = malloc(20 * sizeof(int));
-		if (str == NULL)
+	if (str == NULL)
 	{
 		puts("Memory allocation failed");
 		exit(1);
 	}
-	if (num <= 9)
+	if (num == 0)
 	{
-		j = _printf("%d", num);
+		str[0] = 0;
+		i = 1;
 	}
 	else
-	while (num > 0)
 	{
-		str[i] = num % 10;
-		num /= 10;
-		i++;
+		while (num > 0)
+		{
+			str[i] = num % 10;
+			num /= 10;
+			i++;
+		}
 	}
 	for (j = 0; j < i / 2; j++)
 	{
@@ -37,14 +40,14 @@ int un_string(unsigned int num)
 		str[j] = str[i - j - 1];
 		str[i - j - 1] = temp;
 	}
-	i = 0;
-	while (i < j * 2)
+	j = 0;
+	while (j < i)
 	{
-		_printf("%d", str[i]);
-		i++;
+		_printf("%d", str[j]);
+		j++;
 	}
 	free(str);
-	return (j);
+	return (i);
 }
 /**
  * octal - converts a decimal integer to octal and prints it
