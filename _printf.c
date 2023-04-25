@@ -22,6 +22,8 @@ int	t_print(const char *str, int i, va_list arg, int len, int tmpi)
 		len += _putchar('%');
 	else if (str[i + 1] == 'b')
 		len += convert_to_binary_return_length(va_arg(arg, unsigned int));
+	else if (str[i + 1] == 'u')
+		len += decimal_string(va_arg(arg, int));
 	else if (str[i + 1])
 	{
 		len += _putchar(str[tmpi]);

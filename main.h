@@ -33,4 +33,6 @@ var_cov addition(var_cov store);
 var_cov  mirroring(var_cov value);
 var_cov convert_to_binary(var_cov value, long int num);
 int convert_to_binary_return_length(long int num);
+int decimal_string(int num);
+
 #endif
