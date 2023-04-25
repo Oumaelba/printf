@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * decimal_string - Convert an integer to a string in decimal notation.
+ * un_string - Convert an integer to a string in decimal notation.
  *
  * @num: The integer to convert.
  *
