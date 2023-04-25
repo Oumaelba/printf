@@ -49,30 +49,30 @@ int	char_to_upper_hex(int num, int *len)
  *
  * Return: actual sing length
  */
-int	_non_printable(char *s)
+int _non_printable(char *s)
 {
-	int len;
+	int len = 0;
 	int c;
 
-	len = 0;
 	if (!s)
 	{
 		write(1, "(null)", 6);
 		return (6);
 	}
-	while (s[len])
+	while (*s)
 	{
-		c = s[len];
-		if ((c > 0 && c < 32) || c >= 127)
+		c = (unsigned char)*s;
+		if (c < 32 || c >= 127)
 		{
-			len += _printf("\\x");
-			char_to_upper_hex(c, &len);
+			len += write(1, "\\x", 2);
+			len += char_to_upper_hex(c, &len);
 		}
 		else
 		{
-			write(1, &s[len], 1);
+			write(1, s, 1);
 			len++;
 		}
+		s++;
 	}
 	return (len);
 }
