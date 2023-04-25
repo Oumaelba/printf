@@ -30,8 +30,18 @@ int	t_print(const char *str, int i, va_list arg, int len, int tmpi)
 		len += lower_hex(va_arg(arg, unsigned int));
 	else if (str[i + 1] == 'X')
 		len += upper_hex(va_arg(arg, unsigned int));
-	else if (str[i + 1] == 'S')
-		len += _non_printable(va_arg(arg, char *));
+	else if (str[i + 1] == 'p')
+	{
+		void *p = va_arg(arg, void *);
+
+		if (!p)
+			len += _printf("(nil)");
+		else
+		{
+			len += _printf("0x");
+			len += lower_hex((unsigned long)p);
+		}
+	}
 	else if (str[i + 1])
 	{
 		len += _putchar(str[tmpi]);
