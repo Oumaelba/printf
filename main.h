@@ -35,8 +35,8 @@ var_cov convert_to_binary(var_cov value, long int num);
 int convert_to_binary_return_length(long int num);
 int un_string(unsigned int num);
 int octal(unsigned int num);
-int lower_hex(int num);
-int upper_hex(int num);
+int lower_hex(unsigned int num);
+int upper_hex(unsigned int num);
 
 
 #endif
