@@ -1,36 +1,32 @@
 #include "main.h"
 
 /**
- * _rev - Reverses the order of digits in a binary number.
+ * reverse_binary - Reverses the order of digits in a binary number.
  * @data: A struct containing the binary number as an array
  * Return: The struct containing the reversed binary number.
  */
 var_cov reverse_binary(var_cov data)
 {
-<<<<<<< HEAD
-	int i;
-	int j;
-	int tmp;
+	int i = 0;
+	int j = data.i - 1;
 
-	i = 0;
-	while (i < data.i)
-		i++;
-	i--;
-	while (j < i)
+	while (j > i)
 	{
-		tmp = data.str[i];
-		data.str[i] = data.str[j];
-		data.str[j] = tmp;
-		j++;
-		i--;
+		data.str[i] ^= data.str[j];
+		data.str[j] ^= data.str[i];
+		data.str[i] ^= data.str[j];
+		j--;
+		i++;
 	}
+	return (data);
+}
 
 /**
- * Converts a decimal number to binary.
+ * convert_to_binary - Converts a decimal number to binary.
  *
- * @param value A struct that contains an integer array to store the binary digits and an integer to keep track of the number of digits.
- * @param num The decimal number to convert to binary.
- * @return The binary representation of the input decimal number.
+ * @value: A struct that contains an integer array to store the binary digits
+ * @num: The decimal number to convert to binary.
+ * Return: The binary representation of the input decimal number.
  */
 
 var_cov convert_to_binary(var_cov value, long int num)
@@ -43,7 +39,6 @@ var_cov convert_to_binary(var_cov value, long int num)
 		value.i++;
 		return (value);
 	}
-
 	if (num > 0)
 	{
 		while (num > 0)
@@ -52,10 +47,8 @@ var_cov convert_to_binary(var_cov value, long int num)
 			num /= 2;
 			value.i++;
 		}
-
 		return (reverse_binary(value));
 	}
-
 	if (num < 0)
 	{
 		num = labs(num);
@@ -65,16 +58,13 @@ var_cov convert_to_binary(var_cov value, long int num)
 			num /= 2;
 			value.i++;
 		}
-
 		value = reverse_binary(value);
 		i = 0;
-
 		while (i < value.i)
 		{
 			value.str[i] = !value.str[i];
 			i++;
 		}
-
 		value = addition(value);
 		return (value);
 	}
@@ -82,10 +72,10 @@ var_cov convert_to_binary(var_cov value, long int num)
 }
 
 /**
- * Adds one to a binary number.
+ * addition - never Adds one to a binary number.
  *
- * @param store The binary number to which one should be added.
- * @return The result of adding one to the input binary number.
+ * @store: The binary number to which one should be added.
+ * Return: The result of adding one to the input binary number.
  */
 var_cov addition(var_cov store)
 {
@@ -144,10 +134,10 @@ void  print_adyali(var_cov data)
 }
 
 /**
- * Converts a decimal number to binary and returns the length of the binary representation.
+ * convert_to_binary_return_length -Converts a decimalto binary and
  *
- * @param num The decimal number to convert to binary.
- * @return The length of the binary representation.
+ * @num: The decimal number to convert to binary.
+ * Return: The length of the binary representation.
  */
 
 int convert_to_binary_return_length(long int num)
