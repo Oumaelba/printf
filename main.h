@@ -31,7 +31,7 @@ void print_adyali(var_cov data);
 var_cov reverse_binary(var_cov data);
 var_cov addition(var_cov store);
 var_cov convert_to_binary(var_cov value, long int num);
-int convert_to_binary_return_length(long long num);
+int convert_to_binary_return_length(long int num);
 int un_string(unsigned long num);
 int octal(unsigned long num);
 int lower_hex(unsigned long num);
