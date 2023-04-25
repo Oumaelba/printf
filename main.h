@@ -14,11 +14,11 @@
  * @i: Integer value indicating the number of binary digits in the array
  */
 
-typedef struct var_cov
-{
-	int *str;
-	int i;
+typedef struct {
+		int* str;
+		int i;
 } var_cov;
+
 
 int print_number(int n);
 int _putchar(char c);
@@ -26,10 +26,10 @@ int _putstring(char *s);
 int	t_print(const char *str, int i, va_list arg, int len, int tmpi);
 int _printf(const char *format, ...);
 void print_adyali(var_cov data);
-var_cov _rev(var_cov data);
+var_cov reverse_binary(var_cov data);
 var_cov converter(var_cov value, long num);
 var_cov addition(var_cov store);
 var_cov  mirroring(var_cov value);
-int convert_binary(long num);
-
+var_cov convert_to_binary(var_cov value, long int num);
+int convert_to_binary_return_length(long int num);
 #endif
