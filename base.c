@@ -9,21 +9,25 @@
 
 int un_string(unsigned int num)
 {
-	char *str;
+	int *str;
 	int i, j;
-	char temp;
+	int temp;
 
 	i = 0;
-	str = malloc(20 * sizeof(char));
+	str = malloc(20 * sizeof(int));
 		if (str == NULL)
 	{
 		puts("Memory allocation failed");
 		exit(1);
 	}
-
+	if (num <= 9 && num >= 0)
+	{
+		_printf("%d", num);
+		j++;
+	}
 	while (num > 0)
 	{
-		str[i] = num % 10 + '0';
+		str[i] = num % 10;
 		num /= 10;
 		i++;
 	}
@@ -33,7 +37,12 @@ int un_string(unsigned int num)
 		str[j] = str[i - j - 1];
 		str[i - j - 1] = temp;
 	}
-	_printf("%s", str);
+	i = 0;
+	while (i < j * 2)
+	{
+		_printf("%d", str[i]);
+		i++;
+	}
 	free(str);
 	return (j);
 }
