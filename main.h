@@ -6,6 +6,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <string.h>
 
 /**
  * struct var_cov - Custom data type to store binary numbers
@@ -37,6 +38,9 @@ int un_string(unsigned int num);
 int octal(unsigned int num);
 int lower_hex(unsigned int num);
 int upper_hex(unsigned int num);
-
+int	_non_printable(char *s);
+int	char_to_upper_hex(int num, int *len);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+int	rev_string(char *s);
 
 #endif
