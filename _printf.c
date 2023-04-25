@@ -27,9 +27,9 @@ int	t_print(const char *str, int i, va_list arg, int len, int tmpi)
 	else if (str[i + 1] == 'o')
 		len += octal(va_arg(arg, unsigned int));
 	else if (str[i + 1] == 'x')
-		len += lower_hex(va_arg(arg, unsigned int));
+		_hexalower(va_arg(arg, unsigned int), &len);
 	else if (str[i + 1] == 'X')
-		len += upper_hex(va_arg(arg, unsigned int));
+		_hexaupper(va_arg(arg, unsigned int), &len);
 	else if (str[i + 1])
 	{
 		len += _putchar(str[tmpi]);
