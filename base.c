@@ -105,7 +105,7 @@ int octal(unsigned int num)
  *
  * Return: the length of the resulting hexadecimal string
  */
-int lower_hex(int num)
+int lower_hex(unsigned int num)
 {
 	char *hex;
 	int i, remainder, j, temp;
@@ -116,6 +116,11 @@ int lower_hex(int num)
 	{
 		puts("Memory allocation failed");
 		exit(1);
+	}
+	if (num == 0)
+	{
+		_printf("0");
+		return (1);
 	}
 	while (num > 0)
 	{
@@ -134,9 +139,14 @@ int lower_hex(int num)
 		hex[j] = hex[i - j - 1];
 		hex[i - j - 1] = temp;
 	}
-	_printf("%s", hex);
+	i = 0;
+	while (hex[i])
+	{
+		_printf("%c", hex[i]);
+		i++;
+	}
 	free(hex);
-	return (j);
+	return (i);
 }
 /**
  * upper_hex - converts a decimal integer to its uppercase hexadecimal
@@ -145,7 +155,7 @@ int lower_hex(int num)
  *
  * Return: the length of the resulting hexadecimal string
  */
-int upper_hex(int num)
+int upper_hex(unsigned int num)
 {
 	char *hex;
 	int i, remainder, j, temp;
@@ -156,6 +166,11 @@ int upper_hex(int num)
 	{
 		puts("Memory allocation failed");
 		exit(1);
+	}
+	if (num == 0)
+	{
+		_printf("0");
+		return (1);
 	}
 	while (num > 0)
 	{
@@ -174,7 +189,12 @@ int upper_hex(int num)
 		hex[j] = hex[i - j - 1];
 		hex[i - j - 1] = temp;
 	}
-	_printf("%s", hex);
+	i = 0;
+	while (hex[i])
+	{
+		_printf("%c", hex[i]);
+		i++;
+	}
 	free(hex);
-	return (j);
+	return (i);
 }
