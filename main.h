@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <string.h>
-
+#include <assert.h>
 /**
  * struct var_cov - Custom data type to store binary numbers
  *
@@ -29,18 +29,13 @@ int	t_print(const char *str, int i, va_list arg, int len, int tmpi);
 int _printf(const char *format, ...);
 void print_adyali(var_cov data);
 var_cov reverse_binary(var_cov data);
-var_cov converter(var_cov value, long num);
 var_cov addition(var_cov store);
-var_cov  mirroring(var_cov value);
 var_cov convert_to_binary(var_cov value, long int num);
-int convert_to_binary_return_length(long int num);
-int un_string(unsigned int num);
-int octal(unsigned int num);
-int lower_hex(unsigned int num);
-int upper_hex(unsigned int num);
-int	_non_printable(char *s);
-int	char_to_upper_hex(int num, int *len);
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+int convert_to_binary_return_length(long long num);
+int un_string(unsigned long num);
+int octal(unsigned long num);
+int lower_hex(unsigned long num);
+int upper_hex(unsigned long num);
 int	rev_string(char *s);
 
 #endif

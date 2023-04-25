@@ -7,7 +7,7 @@
  * Return: The number of digits in the resulting string.
  */
 
-int un_string(unsigned int num)
+int un_string(unsigned long num)
 {
 	int *str;
 	int i, j;
@@ -56,7 +56,7 @@ int un_string(unsigned int num)
  *
  * Return: the number of digits in the octal representation of @num
  */
-int octal(unsigned int num)
+int octal(unsigned long num)
 {
 	int *onum;
 	int i, j, temp;
@@ -105,7 +105,7 @@ int octal(unsigned int num)
  *
  * Return: the length of the resulting hexadecimal string
  */
-int lower_hex(unsigned int num)
+int lower_hex(unsigned long num)
 {
 	char *hex;
 	int i, remainder, j, temp;
@@ -155,7 +155,7 @@ int lower_hex(unsigned int num)
  *
  * Return: the length of the resulting hexadecimal string
  */
-int upper_hex(unsigned int num)
+int upper_hex(unsigned long num)
 {
 	char *hex;
 	int i, remainder, j, temp;

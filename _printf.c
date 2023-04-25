@@ -23,13 +23,13 @@ int	t_print(const char *str, int i, va_list arg, int len, int tmpi)
 	else if (str[i + 1] == 'b')
 		len += convert_to_binary_return_length(va_arg(arg, unsigned int));
 	else if (str[i + 1] == 'u')
-		len += un_string(va_arg(arg, unsigned int));
+		len += un_string(va_arg(arg, unsigned long));
 	else if (str[i + 1] == 'o')
-		len += octal(va_arg(arg, unsigned int));
+		len += octal(va_arg(arg, unsigned long));
 	else if (str[i + 1] == 'x')
-		len += lower_hex(va_arg(arg, unsigned int));
+		len += lower_hex(va_arg(arg, unsigned long));
 	else if (str[i + 1] == 'X')
-		len += upper_hex(va_arg(arg, unsigned int));
+		len += upper_hex(va_arg(arg, unsigned long));
 	else if (str[i + 1] == 'p')
 	{
 		void *p = va_arg(arg, void *);
@@ -40,7 +40,7 @@ int	t_print(const char *str, int i, va_list arg, int len, int tmpi)
 		{
 			len += _putstring("0x");
 			len += lower_hex((unsigned long)p);
-		}
+	}
 	}
 	else if (str[i + 1])
 	{

@@ -140,7 +140,7 @@ void  print_adyali(var_cov data)
  * Return: The length of the binary representation.
  */
 
-int convert_to_binary_return_length(long int num)
+int convert_to_binary_return_length(long long num)
 {
 	var_cov value;
 		int length;
