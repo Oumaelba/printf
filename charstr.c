@@ -4,7 +4,7 @@
  * print_number - print a number
  * @n:the number .
  * Return: the value o i
- *
+ * 
  */
 
 int print_number(int n)
