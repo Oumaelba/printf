@@ -160,3 +160,4 @@ int convert_to_binary_return_length(long int num)
 
 	return (length);
 }
+
