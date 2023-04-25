@@ -37,5 +37,7 @@ int octal(unsigned long num);
 int lower_hex(unsigned long num);
 int upper_hex(unsigned long num);
 int	rev_string(char *s);
-
+int	_non_printable(char *s);
+int	char_to_upper_hex(int num, int *len);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 #endif
