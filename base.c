@@ -58,7 +58,7 @@ int un_string(unsigned int num)
  */
 int octal(unsigned int num)
 {
-	char *onum;
+	int *onum;
 	int i, j, temp;
 
 	i = 0;
@@ -68,23 +68,34 @@ int octal(unsigned int num)
 		puts("Memory allocation failed");
 		exit(1);
 	}
-	while (num > 0)
+	if (num == 0)
 	{
-		onum[i] = num % 8 + '0';
-		num /= 8;
-		i++;
+		onum[0] = 0;
+		i = 1;
 	}
-	onum[i] = '\0';
-
+	else
+	{
+		while (num > 0)
+		{
+			onum[i] = num % 8;
+			num /= 8;
+			i++;
+		}
+	}
 	for (j = 0; j < i / 2; j++)
 	{
 		temp = onum[j];
 		onum[j] = onum[i - j - 1];
 		onum[i - j - 1] = temp;
 	}
-	_printf("%s", onum);
+	j = 0;
+	while (j < i)
+	{
+		_printf("%d", onum[j]);
+		j++;
+	}
 	free(onum);
-	return (j);
+	return (i);
 }
 
 /**
