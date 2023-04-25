@@ -15,6 +15,11 @@ int un_string(unsigned int num)
 
 	i = 0;
 	str = malloc(20 * sizeof(char));
+		if (str == NULL)
+	{
+		puts("Memory allocation failed");
+		exit(1);
+	}
 
 	while (num > 0)
 	{
