@@ -7,7 +7,7 @@
  * Return: The number of digits in the resulting string.
  */
 
-int decimal_string(int num)
+int un_string(unsigned int num)
 {
 	char *str;
 	int i, j;
