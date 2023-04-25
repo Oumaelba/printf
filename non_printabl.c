@@ -27,7 +27,7 @@ int char_to_upper_hex(int num)
 		for (i = 0; num != 0; i++)
 		{
 			hex[i] = up[num % 16];
-			if (size >= INT_MAX / sizeof(char))
+			if ((unsigned int)size >= (unsigned int)INT_MAX / sizeof(char))
 			{
 				free(hex);
 				return (-1);
