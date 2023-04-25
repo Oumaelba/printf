@@ -20,11 +20,11 @@ int un_string(unsigned int num)
 		puts("Memory allocation failed");
 		exit(1);
 	}
-	if (num <= 9 && num >= 0)
+	if (num <= 9)
 	{
-		_printf("%d", num);
-		j++;
+		j = _printf("%d", num);
 	}
+	else
 	while (num > 0)
 	{
 		str[i] = num % 10;
