@@ -40,4 +40,8 @@ int	rev_string(char *s);
 int	_non_printable(char *s);
 int	char_to_upper_hex(int num);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+int print_reversed_string(char *s);
+int print_pointer(va_list arg, int len);
+int	t_else_if(const char *str, int i, va_list arg, int len, int tmpi);
+
 #endif
